@@ -21,12 +21,15 @@
 <style lang="scss">
     
     .home-view {
-        display: flex;
-        flex-direction: row;
-        align-items: safe center;
-        justify-content: safe center;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+
+        min-height: 100vh;
+        min-width: 100vw;
 
         height: 100%;
+        width: 100%;
     }
     
 </style>

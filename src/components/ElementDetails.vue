@@ -8,9 +8,9 @@
                 <p class="details-content">{{element.summary}}</p>
             </div>
 
-            <chip icon="user" :value="element.discovered_by" />
-            <chip icon="category" :value="element.category" />
-            <chip icon="boil" :value="`${element.boil}°C`" />
+            <chip v-if="element.discovered_by" icon="user" :value="element.discovered_by" />
+            <chip v-if="element.category" icon="category" :value="element.category" />
+            <chip v-if="element.boil" icon="boil" :value="`${element.boil}°C`" />
             
             <router-link class="learn-more" to="learn-more">Learn More</router-link>
         </div>

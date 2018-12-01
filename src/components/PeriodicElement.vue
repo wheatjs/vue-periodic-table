@@ -10,7 +10,6 @@
 <script lang="ts">
 
     import { Vue, Component, Prop } from 'vue-property-decorator';
-    // import { IElement } from '../table';
 
     @Component
     export default class PeriodicElement extends Vue {

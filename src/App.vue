@@ -31,13 +31,15 @@
         font-family: "Poppins", sans-serif;
         margin: 0;
         background: var(--background);
-        height: 100vh;
+        min-height: 100vh;
+        height: 100%;
         -webkit-font-smoothing: subpixel-antialiased;
         text-rendering: optimizeLegibility;
     }
 
     #app {
-        height: 100vh;
+        // min-height: 100vh;
+        // height: 100%;
     }
 
 </style>

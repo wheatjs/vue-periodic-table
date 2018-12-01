@@ -32,6 +32,7 @@
     
     .periodic-table {
         display: grid;
+        position: relative;
 
         font-size: 14px;
 
