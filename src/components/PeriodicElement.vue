@@ -123,6 +123,15 @@
             flex-direction: column;
             justify-content: flex-end;
             padding: 0.25em;
+
+            @media (max-width: 900px) {
+                text-align: center;
+                justify-content: center;
+
+                .element-name {
+                    display: none;
+                }
+            }
         }
 
             .periodic-element__inner .element-symbol {

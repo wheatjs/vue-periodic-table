@@ -51,6 +51,10 @@
             font-size: 8px;
         }
 
+        @media (max-width: 900px) {
+            font-size: 6px;
+        }
+
         grid-template-columns: 
             var(--grid-column-size)
             var(--grid-column-size)
