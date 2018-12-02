@@ -18,7 +18,7 @@
     export default class PeriodicTable extends Vue {
         
         private elements = Elements;
-        private element = null;
+        private element = this.elements[0];
 
         private onSelectElement(element) {
             this.element = element;
