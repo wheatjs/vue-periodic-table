@@ -12,7 +12,11 @@
             <chip v-if="element.category" icon="category" :value="element.category" />
             <chip v-if="element.boil" icon="boil" :value="`${element.boil}°C`" />
             
-            <router-link class="learn-more" to="learn-more">Learn More</router-link>
+            <div class="details-footer">
+                <!-- <span class="flex"></span> -->
+                <!-- <router-link class="learn-more" to="learn-more">Learn More</router-link> -->
+            </div>
+            
         </div>
         
     </div>
@@ -85,11 +89,21 @@
             }
         }
 
+        .details-footer {
+            display: flex;
+            flex-direction: row;
+            padding: 0.75em 0;
+        }
+
+        .flex {
+            flex: 1;
+        }
+
         .learn-more {
             text-decoration: none;
             text-transform: uppercase;
             color: #333;
-            display: inline-block;
+            display: block;
             padding: 1em 0.75em;
             text-align: center;
             background: white;
@@ -98,10 +112,7 @@
             
             border-radius: 3px;
             line-height: 1em;
-
-            position: absolute;
-            bottom: 0;
-            right: 0;
+            width: 100%;
         }
 
         p {
