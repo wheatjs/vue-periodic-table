@@ -1,31 +1,29 @@
 export interface IElement {
     'name': string, 
-    'appearance': string, 
-    'atomic_mass': number, 
-    'boil': number, 
-    'category': string, 
+    'appearance': string | null, 
+    'atomic_mass': number | null, 
+    'boil': number | null, 
+    'category': string | null, 
     'color': any, 
-    'density': number, 
-    'discovered_by': string, 
-    'melt': number, 
-    'molar_heat': number, 
-    'named_by': string, 
-    'number': number, 
-    'period': number, 
-    'phase': string, 
-    'source': string, 
-    'spectral_img': string, 
-    'summary': string, 
-    'symbol': string, 
-    'xpos': number, 
-    'ypos': number, 
-    'shells': [
-        number
-    ]
+    'density': number | null, 
+    'discovered_by': string | null, 
+    'melt': number | null, 
+    'molar_heat': number | null, 
+    'named_by': string | null, 
+    'number': number | null, 
+    'period': number | null, 
+    'phase': string | null, 
+    'source': string | null, 
+    'spectral_img': string | null,
+    'summary': string | null, 
+    'symbol': string | null, 
+    'xpos': number | null, 
+    'ypos': number | null, 
+    'shells': number[]
 }
 
 // @ts-ignore
-export const Elements = [
+export const Elements: IElement[] = [
     {
         'name': 'Hydrogen', 
         'appearance': 'colorless gas', 

@@ -1,5 +1,5 @@
 <template>
-    <div @click="selectElement" :category="element.category" :style="{ gridColumn: element.xpos, gridRow: element.ypos }" class="periodic-element">
+    <div @click="selectElement" :category="element.category" :style="{ gridColumn: element.xpos + 1, gridRow: element.ypos + 1 }" class="periodic-element">
         <div class="periodic-element__inner">
             <span class="element-symbol">{{element.symbol}}</span>
             <span class="element-name">{{element.name}}</span>

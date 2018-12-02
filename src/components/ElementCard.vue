@@ -40,6 +40,10 @@
         background: var(--gradient-from);
         text-align: center;
 
+        animation-name: CardEntry;
+        animation-timing-function: linear;
+        animation-duration: 0.5s;
+
         &[category="noble gas"] {
             --gradient-from: #1DE9B6;
             --gradient-to: #00BFA5;
@@ -117,6 +121,16 @@
         align-items: center;
         justify-content: flex-end;
         padding-right: 0.75em;
+    }
+
+    @keyframes CardEntry {
+        0% {
+            transform: scale(0);
+        }
+
+        100% {
+            transform: scale(1);
+        }
     }
 
 </style>
