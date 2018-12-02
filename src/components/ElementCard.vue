@@ -40,9 +40,9 @@
         background: var(--gradient-from);
         text-align: center;
 
-        animation-name: CardEntry;
-        animation-timing-function: linear;
-        animation-duration: 0.5s;
+        // animation-name: CardEntry;
+        // animation-timing-function: linear;
+        // animation-duration: 0.5s;
 
         &[category="noble gas"] {
             --gradient-from: #1DE9B6;
