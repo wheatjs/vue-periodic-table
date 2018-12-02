@@ -4,8 +4,8 @@
 
         <div class="element-details__content">
             <div class="details">
-                <span class="deatils-header">About {{element.name}}</span>
-                <p class="details-content">{{element.summary}}</p>
+                <span class="deatils-header">{{element.name}}</span>
+                <p class="details-content">{{element.summary}} <a :href="element.source" target="_blank">Read More</a></p> 
             </div>
 
             <chip v-if="element.discovered_by" icon="user" :value="element.discovered_by" />
@@ -116,10 +116,13 @@
         }
 
         p {
-        
             color: rgba(255, 255, 255, .72);
             grid-area: text;
             margin: 0;
+
+            a {
+                color: rgba(255, 255, 255, .72);
+            }
         }
     }
 
