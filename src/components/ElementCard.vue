@@ -34,15 +34,9 @@
             ". name ."
             "number mass mass";
 
-        // width: 12em;
-        // height: 12em;
-
         background: var(--gradient-from);
         text-align: center;
-
-        // animation-name: CardEntry;
-        // animation-timing-function: linear;
-        // animation-duration: 0.5s;
+        color: #222;
 
         &[category="noble gas"] {
             --gradient-from: #1DE9B6;
@@ -121,16 +115,6 @@
         align-items: center;
         justify-content: flex-end;
         padding-right: 0.75em;
-    }
-
-    @keyframes CardEntry {
-        0% {
-            transform: scale(0);
-        }
-
-        100% {
-            transform: scale(1);
-        }
     }
 
 </style>

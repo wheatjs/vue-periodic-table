@@ -12,10 +12,10 @@
             <chip v-if="element.category" icon="category" :value="element.category" />
             <chip v-if="element.boil" icon="boil" :value="`${element.boil}°C`" />
             
-            <div class="details-footer">
-                <!-- <span class="flex"></span> -->
-                <!-- <router-link class="learn-more" to="learn-more">Learn More</router-link> -->
-            </div>
+            <!-- <div class="details-footer">
+                <span class="flex"></span>
+                <router-link class="learn-more" :to="`/element/${element.symbol}`">Learn More</router-link>
+            </div> -->
             
         </div>
         
@@ -119,7 +119,6 @@
         
             color: rgba(255, 255, 255, .72);
             grid-area: text;
-            // font-size: 16px;
             margin: 0;
         }
     }
