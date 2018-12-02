@@ -1,4 +1,14 @@
-# periodic-table
+# Periodicly - Periodic Table
+
+![GitHub Logo](/preview.png)
+
+
+
+<p align="center">
+    <a href="https://periodicly.com/">Visit Site</a>
+</p>
+
+Periodic Data Source: https://github.com/Bowserinator/Periodic-Table-JSON
 
 ## Project setup
 ```
