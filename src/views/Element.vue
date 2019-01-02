@@ -5,6 +5,11 @@
             <div>
                 <h1>{{element.name}}</h1>
                 {{element.summary}}
+
+                <div>
+                    <element-visual :element="element" />
+                </div>
+                
             </div>
         </div>
         <div v-else>
@@ -17,10 +22,12 @@
 
     import { Vue, Component } from 'vue-property-decorator';
     import { Elements, IElement } from '../table';
+
     import ElementCard from '../components/ElementCard.vue';
+    import ElementVisual from '../components/ElementVisual.vue';
 
     @Component({
-        components: { ElementCard }
+        components: { ElementCard, ElementVisual }
     })
     export default class Element extends Vue {
 

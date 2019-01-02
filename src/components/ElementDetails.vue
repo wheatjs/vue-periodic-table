@@ -12,10 +12,10 @@
             <chip v-if="element.category" icon="category" :value="element.category" />
             <chip v-if="element.boil" icon="boil" :value="`${element.boil}°C`" />
             
-            <!-- <div class="details-footer">
+            <div class="details-footer">
                 <span class="flex"></span>
                 <router-link class="learn-more" :to="`/element/${element.symbol}`">Learn More</router-link>
-            </div> -->
+            </div>
             
         </div>
         
