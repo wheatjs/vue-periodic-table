@@ -1,27 +1,29 @@
 <template>
     <div :category="element.category" class="element-visual">
-        <svg viewBox="0 0 500 500">
-            <circle cx="50%" cy="50%" r="60" />
-            <text text-anchor="middle" dominant-baseline="middle" x="50%" y="50%" fill="black">{{element.symbol}}</text>
+        <svg :style="{fontSize: `${radius(0) * 5}%` }" viewBox="0 0 100 100">
+            <g>
+                <circle cx="50%" cy="50%" :r="radius(0)" />
+                <text text-anchor="middle" dominant-baseline="central" x="50%" y="50%" stroke-width="0" fill="black">{{element.symbol}}</text>
+            </g>
+            
 
             <template v-for="(shell, index) in element.shells">
                 <g :key="`shell-${index}-${shell}`">
-                    <circle cx="250" cy="250" :r="60 + (20 * (index + 1))" fill="transparent" stroke-width="0.2rem" />
+                    <circle cx="50" cy="50" :r="radius(index + 1)" fill="transparent" :stroke-width="shellStrokeWidth" />
 
                     <template v-for="(electron, i) in getElectronCoordinates(shell, index)">
-                        <circle fill="white" stroke="white" :key="`electron-${i}-${shell}-${index}`" :cx="electron.x" :cy="electron.y" r="5" />
+                        <circle fill="white" stroke-width="0" :key="`electron-${i}-${shell}-${index}`" :cx="electron.x" :cy="electron.y" :r="shellStrokeWidth * 2" />
                     </template>
                 </g>
             </template>
         </svg>
-        <span>Bhor Model</span>
     </div>
 </template>
 
 <script lang="ts">
 
     import { Vue, Component, Prop } from 'vue-property-decorator';
-import { IElement } from '@/table';
+    import { IElement } from '@/table';
 
     @Component
     export default class ElementVisual extends Vue {
@@ -33,10 +35,24 @@ import { IElement } from '@/table';
             return this.element.shells;
         }
 
+        private get scale() {
+            return 1 / (this.shells.length);
+        }
+
+        private get shellStrokeWidth() {
+            console.log(4 * this.scale);
+            return Math.min(1, 4 * this.scale);
+        }
+
+        private radius(index: number) {
+            let space = 50 / (this.shells.length + 2);
+            return space * (index + 1);
+        }
+
         private getElectronCoordinates(electrons: number, shell: number) {
-            const xCenter = 250;
-            const yCenter = 250;
-            const shellSize = 60 + (20 * (shell + 1));
+            const xCenter = 50;
+            const yCenter = 50;
+            const shellSize = this.radius(shell + 1); //(10 + ((50 * this.scale) * (shell + 1))) * this.scale;
             const distance = yCenter - shellSize;
 
             const groups = [...Array(electrons).keys()]
@@ -63,8 +79,9 @@ import { IElement } from '@/table';
 <style lang="scss">
     
     .element-visual { 
-        width: 500px;
-        height: 500px;
+        width: 100%;
+        line-height: 0;
+        
 
         &[category="noble gas"] {
             --gradient-from: #1DE9B6;
@@ -125,7 +142,9 @@ import { IElement } from '@/table';
 
             font-family: inherit;
             font-weight: 700;
-            font-size: 2em;
+            font-size: 100%;
+
+            margin: 0;
 
             text { fill: #333; }
         }

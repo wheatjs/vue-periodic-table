@@ -1,10 +1,13 @@
 <template>
     <div :category="element.category" class="element-card">
-        <div class="element-card__atomic-symbol">{{element.symbol}}</div>
-        <div class="element-card__atomic-name">{{element.name}}</div>
+        <div class="element-card__content">
+            <div class="element-card__atomic-symbol">{{element.symbol}}</div>
+            <div class="element-card__atomic-name">{{element.name}}</div>
 
-        <div class="element-card__atomic-number">{{element.number}}</div>
-        <div class="element-card__atomic-mass">{{element.atomic_mass}}</div>
+            <div class="element-card__atomic-number">{{element.number}}</div>
+            <div class="element-card__atomic-mass">{{element.atomic_mass}}</div>
+        </div>
+        
     </div>
 </template>
 
@@ -25,6 +28,22 @@
 <style lang="scss">
     
     .element-card {
+        position: relative;
+        padding-bottom: 100%;
+
+        &[category="noble gas"] { --element-background: #1DE9B6; }
+        &[category~="nonmetal"] { --element-background: #2196F3; }
+        &[category="transition metal"] { --element-background: #00E5FF; }
+        &[category="alkali metal"] { --element-background: #E91E63; }
+        &[category="alkaline earth metal"] { --element-background: #F4511E; }
+        &[category="post-transition metal"] { --element-background: #9C27B0; }
+        &[category="metalloid"] { --element-background: #FFEB3B; }
+        &[category="lanthanide"] { --element-background: #00E676; }
+        &[category="actinide"] { --element-background: #76FF03; }
+        &[category~="unknown,"] { --element-background: white; }
+    }
+
+    .element-card__content {
         display: grid;
         grid-template-columns: 3em auto 3em;
         grid-template-rows: 1fr 1fr 1fr 3em;
@@ -34,59 +53,11 @@
             ". name ."
             "number mass mass";
 
-        background: var(--gradient-from);
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: var(--element-background);
         text-align: center;
         color: #222;
-
-        &[category="noble gas"] {
-            --gradient-from: #1DE9B6;
-            --gradient-to: #00BFA5;
-        }
-
-        &[category~="nonmetal"] {
-            --gradient-from: #2196F3;
-            --gradient-to: #1976D2;
-        }
-
-        &[category="transition metal"] {
-            --gradient-from: #00E5FF;
-            --gradient-to: #00B8D4;
-        }
-
-        &[category="alkali metal"] {
-            --gradient-from: #E91E63;
-            --gradient-to: #C2185B;
-        }
-
-        &[category="alkaline earth metal"] {
-            --gradient-from: #F4511E;
-            --gradient-to: #D84315;
-        }
-
-        &[category="post-transition metal"] {
-            --gradient-from: #9C27B0;
-            --gradient-to: #7B1FA2;
-        }
-
-        &[category="metalloid"] {
-            --gradient-from: #FFEB3B;
-            --gradient-to: #FBC02D;
-        }
-
-        &[category="lanthanide"] {
-            --gradient-from: #00E676;
-            --gradient-to: #00C853;
-        }
-
-        &[category="actinide"] {
-            --gradient-from: #76FF03;
-            --gradient-to: #64DD17;
-        }
-
-        &[category~="unknown,"] {
-            --gradient-from: white;
-            --gradient-to: #eee;
-        }
     }
 
     .element-card__atomic-number {
@@ -96,7 +67,7 @@
         align-items: center;
         justify-content: center;
         font-weight: 700;
-        background: var(--gradient-to);
+        background: rgba(0, 0, 0, .12);
     }
 
     .element-card__atomic-symbol {

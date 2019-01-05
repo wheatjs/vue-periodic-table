@@ -15,10 +15,15 @@ export default new Router({
       component: Home,
     },
     {
-        path: '/element/:element',
-        name: 'element',
-        component: Element,
-    }
+      path: '/:element',
+      name: 'home',
+      component: Home,
+    },
+    // {
+    //     path: '/element/:element',
+    //     name: 'element',
+    //     component: Element,
+    // }
     // { 
     //     path: "*", 
     //     component: Home 

@@ -1,16 +1,19 @@
 <template>
     <div class="home-view">
         <periodic-table />
+        <element-dialog />
     </div>
 </template>
 
 <script lang="ts">
 
     import { Vue, Component } from 'vue-property-decorator';
+
     import PeriodicTable from '../components/PeriodicTable.vue';
+    import ElementDialog from '../components/ElementDialog.vue';
 
     @Component({
-        components: { PeriodicTable }
+        components: { PeriodicTable, ElementDialog }
     })
     export default class HomeView extends Vue {
         

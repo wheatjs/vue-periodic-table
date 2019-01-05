@@ -14,7 +14,7 @@
             
             <div class="details-footer">
                 <span class="flex"></span>
-                <router-link class="learn-more" :to="`/element/${element.symbol}`">Learn More</router-link>
+                <router-link class="learn-more" :to="`/${element.symbol}`">Learn More</router-link>
             </div>
             
         </div>
