@@ -57,8 +57,8 @@
             color: var(--element-background);
         }
 
-            .element-symbol { font-size: 1.75rem; align-self: end; }
-            .element-name { font-size: 0.5rem; }
+            .element-symbol { font-size: 1.5em; align-self: end; }
+            .element-name { font-size: 0.7em; }
 </style>
 
 <script lang="ts">
