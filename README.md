@@ -5,7 +5,7 @@
 
 
 <p align="center">
-    <a href="https://periodicly.com/">Visit Site</a>
+    <a href="https://periodicly.netlify.app/">Visit Site</a>
 </p>
 
 Periodic Data Source: https://github.com/Bowserinator/Periodic-Table-JSON
